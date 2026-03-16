@@ -1,6 +1,13 @@
-public class ProposalApp {
+import javax.swing.JFrame;
+
+public class ProposalApp  {
 
     public static void main(String[] args) {
-        
+        JFrame frame = new JFrame("Proposal App");
+        frame.setSize(500, 400);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+
+      
     }
 }
