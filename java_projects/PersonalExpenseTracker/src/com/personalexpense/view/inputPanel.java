@@ -6,7 +6,7 @@ import java.util.Locale.Category;
 
 import javax.swing.*;
 
-public class inputPanel extends JPanel {
+public class InputPanel extends JPanel {
     private JTextField amountField;
     private JComboBox<Category> categoryCombo;
     private JTextField dateField;
@@ -15,7 +15,7 @@ public class inputPanel extends JPanel {
     private  JButton addButton;
     private JButton clearButton; 
 
-    public inputPanel(){
+    public InputPanel(){
         setLayout(new BorderLayout());
 
         JPanel formPanel = new JPanel(new GridLayout(0, 2, 5, 5));
