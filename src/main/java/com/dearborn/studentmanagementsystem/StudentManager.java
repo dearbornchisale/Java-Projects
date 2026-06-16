@@ -21,8 +21,10 @@ public class StudentManager extends javax.swing.JFrame {
      * Creates new form StudentManager
      */
     public StudentManager() {
-        initComponents();
         
+        System.out.println("Constructor running");
+        initComponents();
+        System.out.println("Componets initialized");
         setLocationRelativeTo(null);
     }
 
@@ -81,10 +83,10 @@ public class StudentManager extends javax.swing.JFrame {
             }
         });
 
-        txtID.setText("enter id ");
         txtID.addActionListener(this::txtIDActionPerformed);
 
         txtName.setText("enter name");
+        txtName.addActionListener(this::txtNameActionPerformed);
 
         jLabel3.setText("Student Manager ");
 
@@ -185,8 +187,13 @@ public class StudentManager extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         int id = Integer.parseInt(txtID.getText());
+        
+         System.out.println("Searching for ID: " + id);
+        
 
         Student student = manager.getStudent(id);
+        
+        System.out.println(student);
 
         if (student != null) {
 
@@ -197,6 +204,8 @@ public class StudentManager extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,
                     "Student not found");
         }
+        
+       
     }//GEN-LAST:event_searchButtonActionPerformed
 
     private void deleteButtonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_deleteButtonKeyPressed
@@ -229,6 +238,10 @@ public class StudentManager extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_deleteButtonActionPerformed
 
+    private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNameActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -249,6 +262,8 @@ public class StudentManager extends javax.swing.JFrame {
             logger.log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        
+        java.awt.EventQueue.invokeLater(() -> new StudentManager().setVisible(true));
 
         /* Create and display the form */
        
